@@ -1,4 +1,4 @@
-package com.hakan.microservices.product.entities;
+package com.hakan.microservices.product.entities.concretes;
 
 
 import lombok.*;
