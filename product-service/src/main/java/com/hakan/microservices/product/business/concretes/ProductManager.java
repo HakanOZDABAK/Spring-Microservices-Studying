@@ -34,6 +34,6 @@ public class ProductManager implements ProductService {
     @Override
     public List<ProductResponse> getAllProducts() {
         return this.productRepository.findAll()
-                .stream().map(product -> new ProductResponse(product.getId(),product.getName(),product.getDescription(),product.getPrice());
+                .stream().map(product -> new ProductResponse(product.getId(),product.getName(),product.getDescription(),product.getPrice())).toList();
     }
 }
