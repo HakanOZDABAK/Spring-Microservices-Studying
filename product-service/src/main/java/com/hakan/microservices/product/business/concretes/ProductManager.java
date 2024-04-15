@@ -2,6 +2,7 @@ package com.hakan.microservices.product.business.concretes;
 
 import com.hakan.microservices.product.business.abstracts.ProductService;
 import com.hakan.microservices.product.business.requests.ProductRequest;
+import com.hakan.microservices.product.business.responses.ProductResponse;
 import com.hakan.microservices.product.dataAccess.abstracts.ProductRepository;
 import com.hakan.microservices.product.entities.concretes.Product;
 import lombok.AllArgsConstructor;
@@ -31,7 +32,8 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
-        return this.productRepository.findAll();
+    public List<ProductResponse> getAllProducts() {
+        return this.productRepository.findAll()
+                .stream().map(product -> new ProductResponse(product.getId(),product.getName(),product.getDescription(),product.getPrice());
     }
 }
