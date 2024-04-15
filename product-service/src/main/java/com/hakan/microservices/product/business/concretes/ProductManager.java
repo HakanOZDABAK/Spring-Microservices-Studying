@@ -1,0 +1,29 @@
+package com.hakan.microservices.product.business.concretes;
+
+import com.hakan.microservices.product.business.abstracts.ProductService;
+import com.hakan.microservices.product.business.requests.ProductRequest;
+import com.hakan.microservices.product.dataAccess.abstracts.ProductRepository;
+import com.hakan.microservices.product.entities.concretes.Product;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class ProductManager implements ProductService {
+
+    private  final ProductRepository productRepository;
+    @Override
+    public void createProduct(ProductRequest productRequest) {
+        Product product = Product.builder()
+                .name(productRequest.name())
+                .description(productRequest.description())
+                .price(productRequest.price())
+                .build();
+        this.productRepository.save(product);
+        log.info("Product created successfully");
+    }
+}
