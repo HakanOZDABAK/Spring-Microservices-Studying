@@ -20,7 +20,7 @@ public class OrderManager implements OrderService{
       order.setOrderNumber(UUID.randomUUID().toString());
       order.setPrice(orderRequest.price());
       order.setQuantity(orderRequest.quantity());
-      order.setSkuCode(orderRequest.skucCode());
+      order.setSkuCode(orderRequest.skuCode());
       this.orderRepository.save(order);
     }
 }
