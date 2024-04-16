@@ -32,12 +32,12 @@ class OrderServiceApplicationTests {
 	@Test
 	void shouldSubmitOrder() {
 		String submitOrderJson = """
-                {
-                     "skuCode": "iphone_15",
-                     "price": 1000,
-                     "quantity": 1
-                }
-                """;
+				{
+				     "skuCode": "iphone_15",
+				     "price": 1000,
+				     "quantity": 1
+				}
+				""";
 
 
 		var responseBodyString = RestAssured.given()
@@ -53,3 +53,4 @@ class OrderServiceApplicationTests {
 
 		assertThat(responseBodyString, Matchers.is("Order Placed Successfully"));
 	}
+}
