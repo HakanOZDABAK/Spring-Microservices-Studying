@@ -14,6 +14,6 @@ public class InventoryManager implements InventoryService {
     @Override
     public boolean isInStock(String skuCode, Integer quantity) {
 
-        return this.inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEquals(skuCode,quantity);
+        return this.inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEqual(skuCode,quantity);
     }
 }
