@@ -1,9 +1,9 @@
 package com.hakan.microservices.order.stubs;
 
-import static  com.github.tomakehurst.wiremock.client.WireMock.*
+import static  com.github.tomakehurst.wiremock.client.WireMock.*;
 public class InventoryClientStub {
 
-    public void stubInventoryCall(String skuCode,Integer quantity){
+    public static void stubInventoryCall(String skuCode,Integer quantity){
 
         stubFor(get(urlEqualTo("/api/inventory?SkucCode=" + skuCode + "&quantity=" + quantity))
                 .willReturn(aResponse()
