@@ -12,11 +12,11 @@ public class OpenAPIConfig {
     @Bean
     public OpenAPI productServiceAPI(){
 
-        return new OpenAPI().info(new Info().title("Product Service API")
-                .description("For Product Service")
+        return new OpenAPI().info(new Info().title("Order Service API")
+                .description("For Order Service")
                 .version("v1")
                 .license(new License().name("Apache 2.0")))
-                .externalDocs(new ExternalDocumentation().description("You can refer to the Product Service Wiki Doc")
-                        .url("https://product-servşce-dummy-url.com/docs"));
+                .externalDocs(new ExternalDocumentation().description("You can refer to the Order Service Wiki Doc")
+                        .url("https://Order-service-dummy-url.com/docs"));
     }
 }
