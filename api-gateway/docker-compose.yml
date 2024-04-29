@@ -3,6 +3,8 @@ services:
   keycloak-mysql:
     container_name: keycloak-mysql
     image: mysql:8
+    ports:
+      - "3306:3306"
     volumes:
       - ./volume-data/mysql_keycloak_data:/var/lib/mysql
     environment:
